@@ -1,0 +1,114 @@
+/* universal selector */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* wrapper set to full viewport and overflow hidden */
+
+.wrapper{
+    height: 100vh;
+    overflow-x:hidden;
+    overflow-y: auto;
+    background-color:darkgray;
+}
+
+/* container is for head and images and set to width and padding */
+
+.container{
+    height: 100%;
+    max-width: 1200px; 
+    margin:0 auto;
+    padding: 20px;
+}
+
+/* head tag ki styling with size and margin */
+
+.container h1{
+    margin:20px 0;          /* 20px is top and bottom and 0 is left and right  */
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color:#333;
+
+}
+
+/* gallery making to flex for responsive */
+
+.gallery{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+}
+
+/* image styling by class card*/
+
+.card{
+    width:32%;                /* remaining used in spacing*/
+    position:relative;        /*for text overlapping */
+    border-radius:10px;
+    margin-bottom: 20px;
+    overflow: hidden;         /* for extra part*/
+}
+
+/* for image styling after hovering */
+
+.card img{
+
+    /* image fit in the card */
+    width:100%;
+    height:100%;
+    object-fit: cover;
+
+    box-shadow: 0 0 20px #333 ;
+    filter: grayscale(100% );         /*for black and white color for default*/
+} 
+
+/* hovering is added here, scaling for increasing, transition for increasing speed,
+drop shadow (effect) is for shadow of black color  */
+
+.card:hover{
+    transform: scale(1.03);
+    transition: 0.3s;
+    filter:drop-shadow(0 0 10px #333)
+}
+
+/* color visible by hovering */
+
+.card:hover img{
+    filter: grayscale(0%);
+}
+
+/* figcaption is applying on image */
+
+.card figcaption{
+    position: absolute;  /*for overlapping on image*/
+    bottom:0;
+    left:0;
+    padding:25px;
+    width:100%;
+    height:20%; 
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500; 
+    opacity: 0;           /* not visible without hover*/
+    border-radius: 0 0 10px 10px ;
+    background:linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(255,255, 255,0) 100%);  /*gradient around image*/
+
+}
+
+.card:hover figcaption{
+    transition: 0.5s;
+    opacity: 1;                  /*visible after hovering*/
+    transform:scale(1.03);
+}
+
+h1:hover{
+    transition: 1s;
+    transform: scale(1.03);
+    color:rgb(243, 234, 130);
+}
+
+
